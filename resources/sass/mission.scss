@@ -1,0 +1,116 @@
+.mission {
+    .jumbotron {
+        background-image: url("http://www.gettingsmart.com/wp-content/uploads/2017/01/College-Students-Using-Laptops-Feature-Image.jpg") no-repeat center center;
+        background-size: cover;
+        .card {
+            width: 20rem;
+            position: absolute;
+            top: -4rem;
+            bottom: -5rem;
+        }
+        button {
+            width: 18rem;
+        }
+    }
+    .milestone {
+        position: relative;
+        bottom: -4rem;
+        z-index: 5;
+        .progress {
+            position:relative;
+            height:60px;
+        }
+        .raised {
+            position:absolute;
+            left:10px;
+            top:9px;
+        }
+        .goal {
+            position:absolute;
+            right:10px;
+            top:9px;
+        }
+    }
+    .join {
+
+    }
+    .team {
+        body
+        {
+            background:#00bcd4;
+        }
+
+        h1
+        {
+            color:#fff;
+            margin:40px 0 60px 0;
+            font-weight:300;
+        }
+
+        .our-team-main
+        {
+            width:100%;
+            height:auto;
+            border-bottom:5px #323233 solid;
+            background:#fff;
+            text-align:center;
+            border-radius:10px;
+            overflow:hidden;
+            position:relative;
+            transition:0.5s;
+            margin-bottom:28px;
+        }
+
+
+        .our-team-main img
+        {
+            border-radius:50%;
+            margin-bottom:20px;
+            width: 90px;
+        }
+
+        .our-team-main h3
+        {
+            font-size:20px;
+            font-weight:700;
+        }
+
+        .our-team-main p
+        {
+            margin-bottom:0;
+        }
+
+        .team-back {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 5px 15px 0 15px;
+            text-align: left;
+            background: #fff;
+
+        }
+        .team-front
+        {
+            width:100%;
+            height:auto;
+            position:relative;
+            z-index:10;
+            background:#fff;
+            padding:15px;
+            bottom:0px;
+            transition: all 0.5s ease;
+        }
+
+        .our-team-main:hover .team-front {
+            bottom:-200px;
+            transition: all 0.5s ease;
+        }
+
+        .our-team-main:hover {
+            border-color:#777;
+            transition:0.5s;
+        }
+    }
+}
