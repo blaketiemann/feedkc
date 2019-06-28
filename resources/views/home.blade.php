@@ -17,6 +17,12 @@
         </div>
     </header>
 
+{{--    <example-component inline-template>--}}
+{{--        <div class="p-8" style="padding: 100px; color:white; z-index: 100000">--}}
+{{--            Hello WOrld--}}
+{{--        </div>--}}
+{{--    </example-component>--}}
+
     <footer class="container-fluid">
         <div class="row justify-content-center">
             <div class="card">
@@ -26,7 +32,9 @@
                     <br>
                     <div class="well">
                         <div class="btn-group btn-group-lg" role="group" aria-label="next">
-                            <a class="btn btn-outline-info" href="{{ route('donate') }}">Donate</a>
+                            <a class="btn btn-outline-info" href="{{ route('donate.create') }}">
+                                Donate
+                            </a>
                             <a class="btn btn-outline-info" href="{{ route('request') }}">Request Food</a>
                         </div>
                     </div>

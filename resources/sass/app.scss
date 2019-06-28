@@ -1,10 +1,12 @@
-
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@tailwind base;
+@tailwind components;
+@tailwind utilites;
 
 // Variables
 @import 'variables';
@@ -12,7 +14,6 @@
 // Locals
 @import 'home';
 @import "mission";
-@import 'donate';
 @import 'request';
 
 .navbar-laravel {

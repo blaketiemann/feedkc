@@ -2,9 +2,11 @@
 
 Auth::routes();
 
+
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/donate', 'HomeController@donate')->name('donate');
+
+Route::resource('/donate', 'DonateController');
 
 Route::get('/request', 'HomeController@request')->name('request');
 
