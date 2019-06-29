@@ -6,9 +6,14 @@
             <div class="text-center">
                 <img class="d-block mx-auto mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
                 <h2>Donation form</h2>
-                <p class="lead">Every item of food goes to people in need</p>
+                <p class="lead">Donations You've Gifted To Others!</p>
             </div>
 
+            @foreach($donations as $donation)
+                <div class="row">
+                    {{ $donation }}
+                </div>
+            @endforeach
             <div class="row">
                 <div class="col-md-4 order-md-2 mb-4">
                     <h4 class="d-flex justify-content-between align-items-center mb-3">

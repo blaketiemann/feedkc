@@ -6,6 +6,8 @@
     "type": "project",
     "require": {
         "php": "^7.1.3",
+        "clean-code-studio/laravel-addresses": "dev-master",
+        "clean-code-studio/laravel-text-messages": "dev-master",
         "fideloper/proxy": "^4.0",
         "grimthorr/laravel-toast": "^1.1",
         "laravel/framework": "5.7.*",

@@ -12,7 +12,14 @@ class DonateController extends Controller
      */
     public function index()
     {
-        //
+        $permitted = auth()->check() && auth()->user()->account === 'donor';
+
+        if (!$permitted) redirect('/');
+
+        $donor = auth()->user();
+        $donations = auth()->user()->donations;
+
+        return view('donate.index', compact('donor', 'donations'));
     }
 
     /**

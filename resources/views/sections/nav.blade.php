@@ -20,6 +20,11 @@
                         Our Mission
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('donate.index') }}">
+                        Donations List
+                    </a>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
