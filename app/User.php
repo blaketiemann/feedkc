@@ -11,8 +11,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable, Textable, CanHaveAddress;
-    // Text Messages Package: https://github.com/clean-code-studio/laravel-text-messages
     // Addresses package: https://github.com/clean-code-studio/laravel-addresses
+    // Text Messages Package: https://github.com/clean-code-studio/laravel-text-messages
 
     /**
      * The attributes that are mass assignable.
