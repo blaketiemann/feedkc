@@ -44,7 +44,7 @@
                                 </a>
                             @endif
                             @if(auth()->user()->account === 'requester')
-                                <a class="btn btn-outline-info" href="{{ route('request') }}">
+                                <a class="btn btn-outline-info" href="{{ route('request.create') }}">
                                     Request Food
                                 </a>
                             @endif

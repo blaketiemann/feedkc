@@ -32,7 +32,7 @@
                             <a class="btn btn-outline-info" href="{{ route('donate.create') }}">
                                 Donate
                             </a>
-                            <a class="btn btn-outline-info" href="{{ route('request') }}">Request Food</a>
+                            <a class="btn btn-outline-info" href="{{ route('request.create') }}">Request Food</a>
                         </div>
                     </div>
                 </div>

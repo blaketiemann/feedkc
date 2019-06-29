@@ -69,7 +69,7 @@
                     @endif
                     @if(Auth::user()->account === 'requester')
                         <li class="nav-item ml-lg-4">
-                            <a class="nav-link btn btn-primary font-weight-bolder text-white pl-lg-4 pr-lg-4" href="{{ route('request') }}">
+                            <a class="nav-link btn btn-primary font-weight-bolder text-white pl-lg-4 pr-lg-4" href="{{ route('request.create') }}">
                                 Request Food
                             </a>
                         </li>

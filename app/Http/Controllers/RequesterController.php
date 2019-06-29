@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Requests\DonateFormRequest as Request;
 
-class DonateController extends Controller
+use App\Http\Requests\RequesterFormRequest as Request;
+
+class RequesterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -12,7 +13,7 @@ class DonateController extends Controller
      */
     public function index()
     {
-        //
+        return view('request.index');
     }
 
     /**
@@ -22,7 +23,7 @@ class DonateController extends Controller
      */
     public function create()
     {
-        return view('donate.create');
+        return view('request.create');
     }
 
     /**
@@ -33,7 +34,7 @@ class DonateController extends Controller
      */
     public function store(Request $request)
     {
-        return back();
+        //
     }
 
     /**
