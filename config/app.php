@@ -187,7 +187,7 @@ return [
     */
 
     'aliases' => [
-
+        'Enum' => App\Services\Enum\EnumFacade::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,

@@ -40,6 +40,17 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">Account Type</label>
+
+                            <div class="col-md-6 pt-2">
+                                @foreach(\Enum::keyToValue()->valueFormatters(['title'])->accounts() as $key => $name)
+                                    <input type="radio" name="account" value="{{ $key }}">
+                                    <label class="ml-2">{{ $name }}</label>
+                                    <br>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">

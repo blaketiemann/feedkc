@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Blade;
+use App\Services\Enum\Enum;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -29,5 +30,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind('Enum', function()
+        {
+           return new Enum;
+        });
     }
 }
