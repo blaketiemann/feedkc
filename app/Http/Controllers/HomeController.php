@@ -23,7 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $resourceExists = [];
+        return view('home', compact('resourceExists'));
     }
 
     public function mission()

@@ -17,17 +17,14 @@
         </div>
     </header>
 
-{{--    <example-component inline-template>--}}
-{{--        <div class="p-8" style="padding: 100px; color:white; z-index: 100000">--}}
-{{--            Hello WOrld--}}
-{{--        </div>--}}
-{{--    </example-component>--}}
-
     <footer class="container-fluid">
         <div class="row justify-content-center">
             <div class="card">
                 <div class="card-body text-center">
                     <h5 class="card-title text-capitalize">What's Next</h5>
+                    <example-component @inline>
+                        @include('components.example-component')
+                    </example-component>
                     <br>
                     <br>
                     <div class="well">
