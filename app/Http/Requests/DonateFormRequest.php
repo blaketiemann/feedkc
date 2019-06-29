@@ -13,7 +13,17 @@ class DonateFormRequest extends FormRequest
      */
     public function authorize()
     {
-        return auth()->check();
+        return auth()->check() && auth()->user()->account == 'donor';
+
+    }
+
+    public function failedAuthorization()
+    {
+        parent::failedAuthorization();
+
+        notify()->error('You Must Be Signed In As A Donor Account To Submit This Form');
+
+        return back();
     }
 
     /**
@@ -32,11 +42,4 @@ class DonateFormRequest extends FormRequest
         return [
         ];
     }
-
-//    public function failedValidation()
-//    {
-//        parent::failedValidation();
-//
-//        Toast::error($this->validator()->messages);
-//    }
 }

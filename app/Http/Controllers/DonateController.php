@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use Toast;
 use App\Http\Requests\DonateFormRequest as Request;
 
 class DonateController extends Controller
@@ -34,7 +33,6 @@ class DonateController extends Controller
      */
     public function store(Request $request)
     {
-        Toast::error('fucked up');
         return back();
     }
 
