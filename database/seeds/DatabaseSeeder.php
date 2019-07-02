@@ -11,8 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\User::class)->create(['account' => 'donor', 'email' => 'donor@gmail.com']);
-        factory(App\User::class)->create(['account' => 'requester', 'email' => 'requester@gmail.com']);
+        factory(App\User::class)->create(['account' => 'donor', 'email' => 'donor@secret.com']);
+        factory(App\User::class)->create(['account' => 'requester', 'email' => 'requester@secret.com']);
 
 
         factory(App\User::class, 50)->create();

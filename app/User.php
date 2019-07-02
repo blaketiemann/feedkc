@@ -32,7 +32,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function donations()
+    public function foods()
     {
         return $this->hasMany(Food::class, 'donor_id');
     }

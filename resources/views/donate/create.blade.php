@@ -2,6 +2,27 @@
 
 @section('content')
     <div class="donate">
+
+{{--        <md-empty-state--}}
+{{--            v-if="$data.cart === []"--}}
+{{--            md-icon="sentiment_very_satisfied"--}}
+{{--            md-label="Make Some Donations!"--}}
+{{--            md-description="Thank you for making a great community"--}}
+{{--            md-rounded--}}
+{{--        ></md-empty-state>--}}
+
+        <md-speed-dial class="md-bottom-right">
+            <md-speed-dial-target class="md-primary">
+                <md-icon>add</md-icon>
+            </md-speed-dial-target>
+        </md-speed-dial>
+
+{{--        <donate-form route="/donate" fields="">--}}
+
+{{--        </donate-form>--}}
+
+
+
         <div class="container">
             <div class="text-center">
                 <img class="d-block mx-auto mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
@@ -39,8 +60,8 @@
                         </li>
                     </ul>
 
-                    <form class="card p-2">
-                        <button type="submit" class="btn btn-success">Donate Gift <i class="fa fa-gift ml-lg-4"></i></button>
+                    <form>
+                        <button type="submit" class="btn btn-success w-100">Donate Gift <i class="fa fa-gift ml-lg-4"></i></button>
                     </form>
                 </div>
                 <div class="col-md-8 order-md-1">

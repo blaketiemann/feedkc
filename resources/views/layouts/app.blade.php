@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="md-scrollbar">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,27 +12,42 @@
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    <!-- Material Styles -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
     @yield('styles')
 
 </head>
 <body>
     <div id="app">
-        @include('sections.nav')
+        <md-app style="height: 100vh" >
 
-        <main>
-            @yield('content')
-        </main>
+            <md-app-toolbar class="md-dense md-primary">
+                @include('sections.nav-left')
+                @include('sections.nav-right')
+            </md-app-toolbar>
+
+            <md-app-drawer :md-active.sync="$data.showDrawer" md-persistent="mini">
+                @include('sections.drawer')
+            </md-app-drawer>
+
+            <md-app-content>
+                @yield('content')
+            </md-app-content>
+
+
+        </md-app>
     </div>
-    <footer></footer>
+
+    <footer>
+        <script>
+            $app = () => document.getElementById('app').__vue__
+            $data = () => $app().$data
+        </script>
+        @yield('scripts')
+    </footer>
 </body>
 </html>

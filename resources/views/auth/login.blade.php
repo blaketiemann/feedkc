@@ -68,4 +68,52 @@
         </div>
     </div>
 </div>
+
+
+{{--<form class="md-layout" novalidate>--}}
+{{--    <md-card class="md-layout-item">--}}
+{{--        <md-card-header>--}}
+{{--            <h3 class="md-title">Login</h3>--}}
+{{--        </md-card-header>--}}
+
+{{--        <md-card-content class="md-layout md-gutter">--}}
+
+{{--            --}}{{--Email--}}
+{{--            <div class="md-layout-item">--}}
+{{--                <md-field>--}}
+{{--                    <label for="email">{{__('E-Mail Address') }}</label>--}}
+{{--                    <md-input--}}
+{{--                        name="email"--}}
+{{--                        id="email"--}}
+{{--                        type="email"--}}
+{{--                        autocomplete="given-name"--}}
+{{--                    ></md-input>--}}
+{{--                </md-field>--}}
+{{--            </div>--}}
+
+{{--            --}}{{--Password--}}
+{{--            <div class="md-layout-item">--}}
+{{--                <md-field>--}}
+{{--                    <label for="password">{{__('Password') }}</label>--}}
+{{--                    <md-input--}}
+{{--                        name="password"--}}
+{{--                        id="password"--}}
+{{--                        type="password"--}}
+{{--                    ></md-input>--}}
+{{--                </md-field>--}}
+{{--            </div>--}}
+
+{{--            --}}{{--Remember Me--}}
+{{--            <div class="md-layout-item">--}}
+{{--                <md-checkbox value="{{ old('remember') ? 'checked' : '' }}"></md-checkbox>--}}
+{{--                </md-field>--}}
+{{--            </div>--}}
+
+{{--        </md-card-content>--}}
+
+{{--        <md-card-actions>--}}
+{{--            <md-button type="submit" class="md-primary">Login</md-button>--}}
+{{--        </md-card-actions>--}}
+{{--    </md-card>--}}
+{{--</form>--}}
 @endsection
