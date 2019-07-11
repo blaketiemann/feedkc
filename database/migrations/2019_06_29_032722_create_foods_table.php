@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use App\Services\Enum\EnumFacade as Enum;
+use Illuminate\Support\Carbon;
 
 class CreateFoodsTable extends Migration
 {
@@ -16,15 +17,15 @@ class CreateFoodsTable extends Migration
     {
         Schema::create('foods', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('donor_id');
+            $table->string('name')->nullable();
+            $table->string('donor_id')->nullable();
             $table->string('message')->nullable();
-            $table->string('business');
-            $table->enum('category', Enum::categories());
-            $table->date('expires_on');
-            $table->float('quantity_amount', '6','2');
-            $table->enum('status', Enum::statuses());
-            $table->enum('quantity_unit', Enum::quantityUnits());
+            $table->string('business')->nullable();
+            $table->enum('category', Enum::categories())->nullable();
+            $table->date('expires_on')->default(Carbon::now());
+            $table->float('quantity_amount', '6','2')->nullable();
+            $table->enum('status', Enum::statuses())->nullable();
+            $table->enum('quantity_unit', Enum::quantityUnits())->nullable();
             $table->timestamps();
         });
     }

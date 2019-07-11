@@ -16,7 +16,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    @notify_css
 
     @yield('styles')
 
@@ -38,15 +38,18 @@
                 @yield('content')
             </md-app-content>
 
-
         </md-app>
     </div>
 
     <footer>
+        @notify_js
+        @notify_render
+
         <script>
             $app = () => document.getElementById('app').__vue__
             $data = () => $app().$data
         </script>
+
         @yield('scripts')
     </footer>
 </body>

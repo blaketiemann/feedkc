@@ -7,29 +7,26 @@
 
 require('./bootstrap');
 
+
+
+/**
+ * Vue Setup
+ */
+
+
 window.Vue = require('vue');
 
+// Vue Material
 import VueMaterial from 'vue-material'
 Vue.use(VueMaterial)
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
 
+
 /**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ * Custom Vue Components
  */
-
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('donate-form', require('./components/DonateForm.vue'));
-
-// const files = require.context('./', true, /\.vue$/i)
-
-// files.keys().map(key => {
-//     return Vue.component(_.last(key.split('/')).split('.')[0], files(key))
-// })
+import './components'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -41,6 +38,7 @@ const app = new Vue({
     el: '#app',
     data: {
         showDrawer: false,
+        showDialog: false,
         cart: []
     },
 });

@@ -38,7 +38,7 @@ class DonateFormRequest extends FormRequest
             'business' => 'required',
             'category' => 'required',
             'expires_on' => 'date|required',
-            'quantity_amount' => 'number|required',
+            'quantity_amount' => 'integer|required',
             'quantity_unit' => 'required',
             'message' => 'nullable',
         ];

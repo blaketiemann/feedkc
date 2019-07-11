@@ -28,12 +28,6 @@ class AppServiceProvider extends ServiceProvider
         Blade::if('account', function ($type) {
             return Auth::user()->account === $type;
         });
-
-//        View::composer('*', function($view) {
-//            $foods = Auth::check() ? Auth::user()->foods : collect([]);
-//
-//            $view->with('foods', $foods);
-//        });
     }
 
     /**

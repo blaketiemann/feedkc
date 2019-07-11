@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Food;
 use App\Http\Requests\DonateFormRequest as Request;
 
 class DonateController extends Controller
@@ -40,6 +42,12 @@ class DonateController extends Controller
      */
     public function store(Request $request)
     {
+        $food = Food::create(['donor_id' => auth()->user()->id])
+            ->fill($request->all())
+            ->save();
+
+        dd($food);
+
         return back();
     }
 
