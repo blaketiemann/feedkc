@@ -6,18 +6,45 @@
     </md-toolbar>
 
     <md-list>
+
+        @account('donor')
+        <md-list-item
+            href="{{ route('donate.create') }}"
+        >
+            <md-icon md-src="{{ asset('svg/gift-outline.svg') }}"></md-icon>
+            <span class="md-list-item-text">
+                Donate
+            </span>
+        </md-list-item>
+        @endaccount
+
+        @account('requester')
+        <md-list-item
+            href="{{ route('request') }}"
+        >
+            <md-icon md-src="{{ asset('svg/cart-outline.svg') }}"></md-icon>
+            <span class="md-list-item-text">
+                Request
+            </span>
+        </md-list-item>
+        @endaccount
+
         <md-list-item
             onclick="alert('Need to Implement')"
         >
             <md-icon>person</md-icon>
-            <span class="md-list-item-text">Profile</span>
+            <span class="md-list-item-text">
+                Profile
+            </span>
         </md-list-item>
 
         <md-list-item
             onclick="document.getElementById('logout-form').submit();"
         >
             <md-icon>exit_to_app</md-icon>
-            <span class="md-list-item-text">{{ __('Logout') }}</span>
+            <span class="md-list-item-text">
+                {{ __('Logout') }}
+            </span>
         </md-list-item>
     </md-list>
 

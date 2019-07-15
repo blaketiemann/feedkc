@@ -1,64 +1,92 @@
 <template>
-    <md-dialog :md-active.sync="showForm">
+    <md-dialog :md-active="showForm" @update:mdActive="updateVisibility($event)">
+
+        <md-progress-bar md-mode="indeterminate" v-if="form.sending" />
 
         <md-dialog-title>Food Donation</md-dialog-title>
 
-        <form novalidate @submit.prevent="form.post('/donate')" class="md-layout">
+        <form novalidate @submit.prevent="addFood">
 
-                <div class="md-layout md-gutter">
-                    <div class="md-layout-item md-small-size-100">
-                        <md-field>
-                            <label for="name">Food Name</label>
-                            <md-input name="name" id="name" v-model="form.name" :disabled="sending" />
-                        </md-field>
+            <md-dialog-content>
+                    <div class="md-layout md-gutter">
+                        <div class="md-layout-item md-size-50 md-small-size-100">
+                            <md-field>
+                                <label for="name">
+                                    Food Name
+                                </label>
+                                <md-input name="name" id="name" v-model="form.name" :disabled="form.sending" />
+                            </md-field>
+                        </div>
+
+                        <div class="md-layout-item md-size-50 md-small-size-100">
+                            <md-field>
+                                <label for="category">
+                                    Category
+                                </label>
+                                <md-select name='category' id='category' v-model="form.category" :disabled="form.sending" >
+                                    <md-option v-for="(category, index) in categories" :key="index" :value="category">{{ category }}</md-option>
+                                </md-select>
+                            </md-field>
+                        </div>
+
+                        <div class="md-layout-item md-size-50 md-small-size-100">
+                            <md-field>
+                                <label for="quantity_amount">
+                                    Quantity
+                                </label>
+                                <md-input name="quantity_amount" id="quantity_amount" v-model="form.quantity_amount" :disabled="form.sending" />
+                            </md-field>
+                        </div>
+
+                        <div class="md-layout-item md-size-50 md-small-size-100">
+                            <md-field>
+                                <label for="quantity_unit">
+                                    Units
+                                </label>
+                                <md-select name='quantity_unit' id='quantity_unit' v-model="form.quantity_unit" :disabled="form.sending" >
+                                    <md-option v-for="(quantity_unit, index) in quantityUnits" :key="index" :value="quantity_unit">{{ quantity_unit }}</md-option>
+                                </md-select>
+                            </md-field>
+                        </div>
+
+                        <div class="md-layout-item md-size-50 md-small-size-100">
+                            <md-datepicker v-model="form.expires_on" placeholder="0000-00-00">
+                                <label for="expires_on">
+                                    Expires On
+                                </label>
+                            </md-datepicker>
+                        </div>
+
+                        <div class="md-layout-item md-size-50 md-small-size-100">
+                            <md-field>
+                                <label for="business">
+                                    Business
+                                </label>
+                                <md-input name="business" id="business" v-model="form.business" :disabled="form.sending" />
+                            </md-field>
+                        </div>
+
+                        <div class="md-layout-item md-size-100">
+                            <md-field>
+                                <label for="message">
+                                    Message
+                                </label>
+                                <md-textarea name="message" id="message" v-model="form.message" :disabled="form.sending" />
+                            </md-field>
+                        </div>
                     </div>
+            </md-dialog-content>
 
-                    <div class="md-layout-item md-small-size-100">
-                        <md-field>
-                            <label for="category">Category</label>
-                            <md-input name="category" id="category" v-model="form.category" :disabled="sending" />
-                        </md-field>
-                    </div>
-
-                    <div class="md-layout-item md-small-size-100">
-                        <md-field>
-                            <label for="expires_on">Expires On</label>
-                            <md-input name="expires_on" id="expires_on" v-model="form.expires_on" :disabled="sending" />
-                        </md-field>
-                    </div>
-
-                    <div class="md-layout-item md-small-size-100">
-                        <md-field>
-                            <label for="quantity_amount">Quantity</label>
-                            <md-input name="quantity_amount" id="quantity_amount" v-model="form.quantity_amount" :disabled="sending" />
-                        </md-field>
-                    </div>
-
-                    <div class="md-layout-item md-small-size-100">
-                        <md-field>
-                            <label for="quantity_unit">Units</label>
-                            <md-input name="quantity_unit" id="quantity_unit" v-model="form.quantity_unit" :disabled="sending" />
-                        </md-field>
-                    </div>
-
-                    <div class="md-layout-item md-small-size-100">
-                        <md-field>
-                            <label for="message">Message</label>
-                            <md-input name="message" id="message" v-model="form.message" :disabled="sending" />
-                        </md-field>
-                    </div>
-                </div>
-
-                <md-progress-bar md-mode="indeterminate" v-if="sending" />
-
-                <md-dialog-actions>
-                    <md-button type="submit" class="md-primary" :disabled="sending">
-                        Add Donation
-                    </md-button>
-                </md-dialog-actions>
+            <md-dialog-actions>
+                <md-button @click="close()" class="md-primary" :disabled="form.sending">
+                    Close
+                </md-button>
+                <md-button type="submit" class="md-primary" :disabled="form.sending">
+                    Add
+                </md-button>
+            </md-dialog-actions>
 
         </form>
-
     </md-dialog>
 </template>
 
@@ -66,23 +94,44 @@
     import Form from '../../mixins/Form'
 
     export default {
-        props: ['showForm'],
+        props: [
+            'showForm',
+            'categories',
+            'quantityUnits'
+        ],
 
         data()
         {
             return {
-                sending: false,
                 message: '',
 
                 form: new Form({
-                    name: 'Chicken',
-                    business: 'Plaza',
-                    category: 'Protein',
-                    expires_on: moment(),
-                    quantity_amount: '10',
-                    quantity_unit: 'pounds',
-                    message: 'Go there'
+                    name: '',
+                    business: 'Price Chopper',
+                    category: 'carbohydrate',
+                    expires_on: new Date(),
+                    quantity_amount: '',
+                    quantity_unit: 'loaves',
+                    message: ''
                 })
+            }
+        },
+
+        methods:
+        {
+            // Makes show-form.sync works
+            updateVisibility(event)
+            {
+                this.$emit('update:showForm', event)
+            },
+            close()
+            {
+                $data().showDialog = false
+                this.form.reset()
+            },
+            addFood()
+            {
+                this.$emit('add', this.form)
             }
         }
     }

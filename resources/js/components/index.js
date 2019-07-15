@@ -4,6 +4,7 @@ import Vue from 'vue'
  * Components
  */
 Vue.component('food-card', require('./FoodCard'))
+Vue.component('foods', require('./Foods'))
 
 /**
  * Forms

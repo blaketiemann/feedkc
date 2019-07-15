@@ -8,6 +8,7 @@ export default class Form {
      */
     constructor(data) {
         this.originalData = data;
+        this.sending = false
 
         for (let field in data) {
             this[field] = data[field];
@@ -90,6 +91,8 @@ export default class Form {
      * @param {string} url
      */
     submit(requestType, url) {
+        this.sending = true
+
         return new Promise((resolve, reject) => {
             axios[requestType](url, this.data())
                 .then(response => {
@@ -113,6 +116,7 @@ export default class Form {
      */
     onSuccess(data) {
         // todo: add success message
+        this.sending = false
 
         this.reset();
     }
@@ -124,6 +128,8 @@ export default class Form {
      * @param {object} errors
      */
     onFail(errors) {
+        this.sending = false
+
         this.errors.record(errors);
     }
 }

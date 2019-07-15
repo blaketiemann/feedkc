@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Food;
+use App\Enums\Statuses;
 use App\Http\Requests\DonateFormRequest as Request;
 
 class DonateController extends Controller
@@ -42,11 +43,12 @@ class DonateController extends Controller
      */
     public function store(Request $request)
     {
-        $food = Food::create(['donor_id' => auth()->user()->id])
-            ->fill($request->all())
-            ->save();
+        $food = new Food;
 
-        dd($food);
+        $food->fill($request->all());
+        $food->donor_id = auth()->user()->id;
+        $food->status = Statuses::PENDING;
+        $food->save();
 
         return back();
     }

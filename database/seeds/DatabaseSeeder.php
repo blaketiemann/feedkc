@@ -14,11 +14,8 @@ class DatabaseSeeder extends Seeder
         factory(App\User::class)->create(['account' => 'donor', 'email' => 'donor@secret.com']);
         factory(App\User::class)->create(['account' => 'requester', 'email' => 'requester@secret.com']);
 
-
-        factory(App\User::class, 50)->create();
-
         App\User::where('account', 'donor')->each(function($donor) {
-            factory(App\Food::class, 15)->create(['donor_id' => $donor->id]);
+            factory(App\Food::class, 3)->create(['donor_id' => $donor->id]);
         });
     }
 }
