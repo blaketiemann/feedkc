@@ -1,10 +1,12 @@
 import Vue from 'vue'
 
+import FoodMixin from '../mixins/Food.js'
+
 /**
  * Components
  */
 Vue.component('food-card', require('./FoodCard'))
-Vue.component('foods', require('./Foods'))
+Vue.component('donating-foods', require('./Foods'))
 
 /**
  * Forms

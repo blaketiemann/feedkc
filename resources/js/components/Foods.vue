@@ -11,11 +11,11 @@
 </template>
 
 <script>
-    import FoodCart from './FoodCard'
+    import FoodCard from './FoodCard'
 
     export default {
-        props: [foods],
-        components: {FoodCart}
+        props: ['foods'],
+        components: {FoodCard}
     }
 </script>
 

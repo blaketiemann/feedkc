@@ -20,7 +20,7 @@
         {{--        ></md-empty-state>--}}
 
 
-        <foods :foods="{{ App\Food::where('donor_id', Auth::user()->id)->where('status', 'pending')->get() }}"/>
+        <donating-foods :foods="{{ App\Food::where('donor_id', auth()->user()->id)->where('status', 'pending')->get() }}"/>
 
         {{--Donation Form--}}
         <donate-form
