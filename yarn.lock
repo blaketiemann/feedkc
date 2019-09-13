@@ -3039,6 +3039,11 @@ growly@^1.3.0:
   resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
   integrity sha1-8QdIy+dq+WS3yWyTxrzCivEgwIE=
 
+hammerjs@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
+  integrity sha1-BO93hiz/K7edMPdpIJWTAiK/YPE=
+
 handle-thing@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/handle-thing/-/handle-thing-2.0.0.tgz#0e039695ff50c93fc288557d696f3c1dc6776754"
@@ -7153,10 +7158,23 @@ vue-loader@^13.7.1:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.6.0"
 
+vue-material-slider@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vue-material-slider/-/vue-material-slider-1.0.1.tgz#144851ece031a419840fef17ecbbaac2af0eafe3"
+  integrity sha512-8V0qg0sX9jdFeFibSJE8DGEX/GrCLvnbXFxsx0GiSCp9cx6zaLlIt4rxO9O4RXHEJ3Hdi17f7fbzg+6OnaLENw==
+  dependencies:
+    hammerjs "^2.0.8"
+    vue "^2.5.17"
+
 vue-material@^1.0.0-beta-11:
   version "1.0.0-beta-11"
   resolved "https://registry.yarnpkg.com/vue-material/-/vue-material-1.0.0-beta-11.tgz#11baf0cdb22a35d35859c619099d6c3cb3cc2cc3"
   integrity sha512-1+dIVkQafMIA/zNONb7OwGaTjAxaWk/JhUA2/FInQvbArxf1ToKB+yIdeSfzopQ1KICnBTAmk9E0Vdr5p4MWNA==
+
+vue-range-component@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/vue-range-component/-/vue-range-component-1.0.3.tgz#17a1faa0cf3ccb67bdcc767564fd9b9b1b71c237"
+  integrity sha512-J/rE7KJa61XsLXREvSw0Ia+dSTaLoP5Ou7NfOy5pm/1FMgYn7E14iQj7baA8H4ZxoIuKuCfrhjWglPHtWUPGmg==
 
 vue-style-loader@^3.0.0:
   version "3.1.2"

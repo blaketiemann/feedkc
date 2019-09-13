@@ -16,13 +16,13 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Food::class, function (Faker $faker) {
     return [
-        'name' => $faker->colorName,
+        'name' => $faker->word,
         'status' => $faker->randomElement(Enum::statuses()),
-        'message' => str_random(50),
-        'business' => $faker->colorName,
+        'message' => $faker->realText(20),
+        'business' => $faker->word,
         'category' => $faker->randomElement(Enum::categories()),
         'expires_on' => now()->addDays($faker->randomDigitNotNull),
         'quantity_unit' => $faker->randomElement(Enum::quantityUnits()),
-        'quantity_amount' => 100.00,
+        'quantity_amount' => $faker->randomDigitNotNull,
     ];
 });

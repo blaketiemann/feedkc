@@ -3,7 +3,7 @@
         <md-icon>menu</md-icon>
     </md-button>
 
-    <a class='md-title' href="{{ route('home') }}">
+    <a class='md-title md-accent' style="text-decoration: none;" href="{{ route('home') }}">
         {{ env('APP_NAME') }}
     </a>
 </div>

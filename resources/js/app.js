@@ -20,8 +20,7 @@ window.Vue = require('vue');
 import VueMaterial from 'vue-material'
 Vue.use(VueMaterial)
 import 'vue-material/dist/vue-material.min.css'
-import 'vue-material/dist/theme/default.css'
-
+// import 'vue-material/dist/theme/default.css'
 
 /**
  * Custom Vue Components
@@ -34,7 +33,7 @@ import './components'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 
-const store = new Vuex.Store(require('./store'))
+const store = new Vuex.Store(require('./store').default)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -45,9 +44,8 @@ const store = new Vuex.Store(require('./store'))
 
 const app = new Vue({
     el: '#app',
+    store,
     data: {
         showDrawer: false,
-        showDialog: false,
-        cart: []
     },
 });

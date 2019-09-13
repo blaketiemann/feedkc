@@ -1,5 +1,5 @@
 <template>
-    <md-dialog :md-active="showForm" @update:mdActive="updateVisibility($event)">
+    <md-dialog :md-active.sync="$store.state.showDialog">
 
         <md-progress-bar md-mode="indeterminate" v-if="form.sending" />
 
@@ -69,7 +69,7 @@
                         <div class="md-layout-item md-size-100">
                             <md-field>
                                 <label for="message">
-                                    Message
+                                    Pick-up Information
                                 </label>
                                 <md-textarea name="message" id="message" v-model="form.message" :disabled="form.sending" />
                             </md-field>
@@ -95,7 +95,6 @@
 
     export default {
         props: [
-            'showForm',
             'categories',
             'quantityUnits'
         ],
@@ -119,19 +118,14 @@
 
         methods:
         {
-            // Makes show-form.sync works
-            updateVisibility(event)
-            {
-                this.$emit('update:showForm', event)
-            },
             close()
             {
-                $data().showDialog = false
+                this.$store.dispatch('toggleDialog')
                 this.form.reset()
             },
             addFood()
             {
-                this.$emit('add', this.form)
+                this.form.post('/donate')
             }
         }
     }

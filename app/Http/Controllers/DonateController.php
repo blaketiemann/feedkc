@@ -15,12 +15,8 @@ class DonateController extends Controller
      */
     public function index()
     {
-        $permitted = auth()->check() && auth()->user()->account === 'donor';
-
-        if (!$permitted) redirect('/');
-
         $donor = auth()->user();
-        $donations = auth()->user()->donations;
+        $donations = auth()->user()->foods()->latest()->get();
 
         return view('donate.index', compact('donor', 'donations'));
     }
@@ -47,7 +43,7 @@ class DonateController extends Controller
 
         $food->fill($request->all());
         $food->donor_id = auth()->user()->id;
-        $food->status = Statuses::PENDING;
+        $food->status = Statuses::LISTED;
         $food->save();
 
         return back();
@@ -95,6 +91,6 @@ class DonateController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Food::find($id)->delete();
     }
 }

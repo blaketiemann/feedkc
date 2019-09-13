@@ -5,8 +5,9 @@ import FoodMixin from '../mixins/Food.js'
 /**
  * Components
  */
+Vue.component('speed-dial', require('./SpeedDial'))
 Vue.component('food-card', require('./FoodCard'))
-Vue.component('donating-foods', require('./Foods'))
+Vue.component('foods', require('./Foods'))
 
 /**
  * Forms

@@ -25,7 +25,7 @@
     <div id="app">
         <md-app style="height: 100vh" >
 
-            <md-app-toolbar class="md-dense md-primary">
+            <md-app-toolbar class="position-sticky md-dense md-primary">
                 @include('sections.nav-left')
                 @include('sections.nav-right')
             </md-app-toolbar>
@@ -39,15 +39,24 @@
             </md-app-content>
 
         </md-app>
+
+        <speed-dial route="{{ \Request::path() }}"/>
     </div>
 
     <footer>
         @notify_js
         @notify_render
 
+
+        {{--    Window Accessable Objects    --}}
         <script>
             $app = () => document.getElementById('app').__vue__
-            $data = () => $app().$data
+            Object.defineProperty(window , '$store', {
+                get: () => $app().$store
+            })
+            window.error = (...args) => {
+                console.error(...args)
+            }
         </script>
 
         @yield('scripts')

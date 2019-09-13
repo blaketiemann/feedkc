@@ -20,7 +20,7 @@
 
         @account('requester')
         <md-list-item
-            href="{{ route('request') }}"
+            href="{{ route('request.index') }}"
         >
             <md-icon md-src="{{ asset('svg/cart-outline.svg') }}"></md-icon>
             <span class="md-list-item-text">
