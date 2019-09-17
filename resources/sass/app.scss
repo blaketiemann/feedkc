@@ -23,9 +23,26 @@
 // Page CSS
 .home {
     .home-card {
+        display: inline-table;
         position: fixed;
         bottom: 20%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+    .gif {
+        position: fixed;
+        bottom: -20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @media only screen and (max-width: 1000px) {
+            bottom: 0%;
+        }
+        @media only screen and (max-width: 600px) {
+            bottom: 30%;
+        }
+        @media only screen and (max-width: 300px) {
+            bottom: 50%;
+        }
     }
 }

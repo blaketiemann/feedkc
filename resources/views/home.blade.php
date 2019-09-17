@@ -8,7 +8,7 @@
 {{--        md-description="Our mission is build a community of nice people"--}}
 {{--        md-rounded--}}
 {{--    ></md-empty-state>--}}
-    <img src="/images/home.gif" alt="Home Image">
+    <img src="/images/home.gif" alt="Home Image" class="gif">
 
     <md-card class="md-centered home-card">
         <md-card-content class="justify-content-between">

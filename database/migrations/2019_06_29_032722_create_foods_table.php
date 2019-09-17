@@ -19,6 +19,7 @@ class CreateFoodsTable extends Migration
             $table->increments('id');
             $table->string('name')->nullable();
             $table->string('donor_id')->nullable();
+            $table->string('requester_id')->nullable();
             $table->string('message')->nullable();
             $table->string('business')->nullable();
             $table->enum('category', Enum::categories())->nullable();

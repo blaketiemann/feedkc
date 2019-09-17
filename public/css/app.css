@@ -11737,6 +11737,7 @@ h3,
 h4,
 h5,
 h6,
+hr,
 figure,
 p,
 pre {
@@ -11809,6 +11810,14 @@ html {
   border-color: #e2e8f0;
 }
 
+/*
+ * Ensure horizontal rules are visible by default
+ */
+
+hr {
+  border-top-width: 1px;
+}
+
 /**
  * Undo the `border-style: none` reset that Normalize applies to images so that
  * our `border-{width}` utilities have the expected effect.
@@ -11829,26 +11838,22 @@ textarea {
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: inherit;
-  opacity: 0.5;
+  color: #a0aec0;
 }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: inherit;
-  opacity: 0.5;
+  color: #a0aec0;
 }
 
 input::-ms-input-placeholder,
 textarea::-ms-input-placeholder {
-  color: inherit;
-  opacity: 0.5;
+  color: #a0aec0;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: inherit;
-  opacity: 0.5;
+  color: #a0aec0;
 }
 
 button,
@@ -12327,7 +12332,7 @@ video {
     ;
   --md-theme-default-accent: #ff5252
     ;
-  --md-theme-default-theme: dark
+  --md-theme-default-theme: light
     ;
 }
 
@@ -12366,10 +12371,10 @@ video {
 }
 
 html.md-theme-default {
-  background-color: #303030;
-  background-color: var(--md-theme-default-background-variant, #303030);
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background-variant, #fff);
+  background-color: #fafafa;
+  background-color: var(--md-theme-default-background-variant, #fafafa);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background-variant, rgba(0, 0, 0, 0.87));
 }
 
 .md-theme-default .md-caption, .md-theme-default
@@ -12377,23 +12382,23 @@ html.md-theme-default {
 .md-display-2, .md-theme-default
 .md-display-3, .md-theme-default
 .md-display-4 {
-  color: rgba(255, 255, 255, 0.7);
-  color: var(--md-theme-default-text-accent-on-background-variant, rgba(255, 255, 255, 0.7));
+  color: rgba(0, 0, 0, 0.54);
+  color: var(--md-theme-default-text-accent-on-background-variant, rgba(0, 0, 0, 0.54));
 }
 
 .md-scrollbar.md-theme-default::-webkit-scrollbar-corner, .md-scrollbar.md-theme-default::-webkit-scrollbar-track {
-  background: #212121;
-  background: var(--md-theme-default-scrollbar-background-on-background-variant, #212121);
+  background: #e1e1e1;
+  background: var(--md-theme-default-scrollbar-background-on-background-variant, #e1e1e1);
 }
 
 .md-scrollbar.md-theme-default::-webkit-scrollbar-thumb {
-  background: #9E9E9E;
-  background: var(--md-theme-default-scrollbar-on-background-variant, #9E9E9E);
+  background: #757575;
+  background: var(--md-theme-default-scrollbar-on-background-variant, #757575);
 }
 
 .md-app:not(.md-overlap).md-theme-default {
-  background-color: #424242;
-  background-color: var(--md-theme-default-background, #424242);
+  background-color: #fff;
+  background-color: var(--md-theme-default-background, #fff);
 }
 
 .md-list.md-theme-default .md-autocomplete-items .md-highlight-text-match {
@@ -12402,23 +12407,23 @@ html.md-theme-default {
 }
 
 .md-list.md-theme-default .md-autocomplete-loading {
-  background-color: rgba(66, 66, 66, 0.54);
-  background-color: var(--md-theme-default-background, rgba(66, 66, 66, 0.54));
+  background-color: rgba(255, 255, 255, 0.54);
+  background-color: var(--md-theme-default-background, rgba(255, 255, 255, 0.54));
 }
 
 .md-autocomplete.md-theme-default.md-autocomplete-box {
-  background-color: #424242;
-  background-color: var(--md-theme-default-background, #424242);
+  background-color: #fff;
+  background-color: var(--md-theme-default-background, #fff);
 }
 
 .md-autocomplete.md-theme-default.md-autocomplete-box.md-focused label {
-  color: rgba(255, 255, 255, 0.5);
-  color: var(--md-theme-default-text-hint-on-background, rgba(255, 255, 255, 0.5));
+  color: rgba(0, 0, 0, 0.38);
+  color: var(--md-theme-default-text-hint-on-background, rgba(0, 0, 0, 0.38));
 }
 
 .md-toolbar .md-autocomplete.md-theme-default.md-autocomplete-box {
-  background-color: rgba(66, 66, 66, 0.12);
-  background-color: var(--md-theme-default-background, rgba(66, 66, 66, 0.12));
+  background-color: rgba(255, 255, 255, 0.12);
+  background-color: var(--md-theme-default-background, rgba(255, 255, 255, 0.12));
 }
 
 .md-toolbar .md-autocomplete.md-theme-default.md-autocomplete-box label,
@@ -12435,42 +12440,42 @@ html.md-theme-default {
 }
 
 .md-toolbar .md-autocomplete.md-theme-default.md-autocomplete-box.md-focused {
-  background-color: #424242;
-  background-color: var(--md-theme-default-background, #424242);
+  background-color: #fff;
+  background-color: var(--md-theme-default-background, #fff);
 }
 
 .md-toolbar .md-autocomplete.md-theme-default.md-autocomplete-box.md-focused label,
 .md-toolbar .md-autocomplete.md-theme-default.md-autocomplete-box.md-focused input {
-  color: rgba(255, 255, 255, 0.5);
-  color: var(--md-theme-default-text-hint-on-background, rgba(255, 255, 255, 0.5));
-  -webkit-text-fill-color: rgba(255, 255, 255, 0.5);
-  -webkit-text-fill-color: var(--md-theme-default-text-hint-on-background, rgba(255, 255, 255, 0.5));
+  color: rgba(0, 0, 0, 0.38);
+  color: var(--md-theme-default-text-hint-on-background, rgba(0, 0, 0, 0.38));
+  -webkit-text-fill-color: rgba(0, 0, 0, 0.38);
+  -webkit-text-fill-color: var(--md-theme-default-text-hint-on-background, rgba(0, 0, 0, 0.38));
 }
 
 .md-toolbar .md-autocomplete.md-theme-default.md-autocomplete-box.md-focused svg {
-  fill: rgba(255, 255, 255, 0.5);
-  fill: var(--md-theme-default-text-hint-on-background, rgba(255, 255, 255, 0.5));
+  fill: rgba(0, 0, 0, 0.38);
+  fill: var(--md-theme-default-text-hint-on-background, rgba(0, 0, 0, 0.38));
 }
 
 .md-autocomplete-box-content.md-theme-default:after {
-  background-color: #424242;
-  background-color: var(--md-theme-default-background, #424242);
-  border-bottom-color: rgba(255, 255, 255, 0.12);
-  border-bottom-color: var(--md-theme-default-divider, rgba(255, 255, 255, 0.12));
+  background-color: #fff;
+  background-color: var(--md-theme-default-background, #fff);
+  border-bottom-color: rgba(0, 0, 0, 0.12);
+  border-bottom-color: var(--md-theme-default-divider, rgba(0, 0, 0, 0.12));
 }
 
 .md-avatar.md-theme-default.md-avatar-icon {
-  background-color: rgba(255, 255, 255, 0.5);
-  background-color: var(--md-theme-default-icon-disabled, rgba(255, 255, 255, 0.5));
-  color: rgba(0, 0, 0, 0.87);
-  color: var(--md-theme-default-text-primary-on-icon-disabled, rgba(0, 0, 0, 0.87));
+  background-color: rgba(0, 0, 0, 0.38);
+  background-color: var(--md-theme-default-icon-disabled, rgba(0, 0, 0, 0.38));
+  color: #fff;
+  color: var(--md-theme-default-text-primary-on-icon-disabled, #fff);
 }
 
 .md-avatar.md-theme-default.md-avatar-icon .md-icon {
-  color: rgba(0, 0, 0, 0.87);
-  color: var(--md-theme-default-text-primary-on-icon-disabled, rgba(0, 0, 0, 0.87));
-  fill: rgba(0, 0, 0, 0.87);
-  fill: var(--md-theme-default-text-primary-on-icon-disabled, rgba(0, 0, 0, 0.87));
+  color: #fff;
+  color: var(--md-theme-default-text-primary-on-icon-disabled, #fff);
+  fill: #fff;
+  fill: var(--md-theme-default-text-primary-on-icon-disabled, #fff);
 }
 
 .md-avatar.md-theme-default.md-primary {
@@ -12512,8 +12517,8 @@ html.md-theme-default {
 }
 
 .md-bottom-bar.md-theme-default.md-type-fixed {
-  background-color: #424242;
-  background-color: var(--md-theme-default-background, #424242);
+  background-color: #fff;
+  background-color: var(--md-theme-default-background, #fff);
 }
 
 .md-bottom-bar.md-theme-default.md-type-fixed .md-bottom-bar-item.md-active {
@@ -12569,8 +12574,8 @@ html.md-theme-default {
 }
 
 .md-bottom-bar.md-theme-default.md-accent.md-type-fixed {
-  background-color: #424242;
-  background-color: var(--md-theme-default-background, #424242);
+  background-color: #fff;
+  background-color: var(--md-theme-default-background, #fff);
 }
 
 .md-bottom-bar.md-theme-default.md-accent.md-type-fixed .md-bottom-bar-item.md-active {
@@ -12626,8 +12631,8 @@ html.md-theme-default {
 }
 
 .md-button.md-theme-default {
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-button.md-theme-default.md-primary {
@@ -12661,17 +12666,17 @@ html.md-theme-default {
 }
 
 .md-button.md-theme-default.md-raised[disabled] {
-  background-color: rgba(255, 255, 255, 0.12);
-  background-color: var(--md-theme-default-disabled-background-on-background, rgba(255, 255, 255, 0.12));
-  color: rgba(255, 255, 255, 0.3);
-  color: var(--md-theme-default-disabled, rgba(255, 255, 255, 0.3));
+  background-color: rgba(0, 0, 0, 0.12);
+  background-color: var(--md-theme-default-disabled-background-on-background, rgba(0, 0, 0, 0.12));
+  color: rgba(0, 0, 0, 0.26);
+  color: var(--md-theme-default-disabled, rgba(0, 0, 0, 0.26));
 }
 
 .md-button.md-theme-default.md-raised:not([disabled]) {
-  background-color: #424242;
-  background-color: var(--md-theme-default-background, #424242);
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  background-color: #fff;
+  background-color: var(--md-theme-default-background, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-button.md-theme-default.md-raised:not([disabled]).md-primary {
@@ -12709,8 +12714,8 @@ html.md-theme-default {
 }
 
 .md-button.md-theme-default.md-fab[disabled] {
-  background-color: rgba(255, 255, 255, 0.12);
-  background-color: var(--md-theme-default-disabled-background-on-background, rgba(255, 255, 255, 0.12));
+  background-color: rgba(0, 0, 0, 0.12);
+  background-color: var(--md-theme-default-disabled-background-on-background, rgba(0, 0, 0, 0.12));
 }
 
 .md-button.md-theme-default.md-fab:not([disabled]) {
@@ -12744,49 +12749,49 @@ html.md-theme-default {
 }
 
 .md-button.md-theme-default[disabled] {
-  color: rgba(255, 255, 255, 0.3);
-  color: var(--md-theme-default-disabled-on-background, rgba(255, 255, 255, 0.3));
+  color: rgba(0, 0, 0, 0.26);
+  color: var(--md-theme-default-disabled-on-background, rgba(0, 0, 0, 0.26));
 }
 
 .md-button.md-theme-default[disabled] .md-icon-font {
-  color: rgba(255, 255, 255, 0.5);
-  color: var(--md-theme-default-icon-disabled-on-background, rgba(255, 255, 255, 0.5));
+  color: rgba(0, 0, 0, 0.38);
+  color: var(--md-theme-default-icon-disabled-on-background, rgba(0, 0, 0, 0.38));
 }
 
 .md-button.md-theme-default[disabled] .md-icon-image {
-  fill: rgba(255, 255, 255, 0.5);
-  fill: var(--md-theme-default-icon-disabled-on-background, rgba(255, 255, 255, 0.5));
+  fill: rgba(0, 0, 0, 0.38);
+  fill: var(--md-theme-default-icon-disabled-on-background, rgba(0, 0, 0, 0.38));
 }
 
 .md-card.md-theme-default {
-  background-color: #424242;
-  background-color: var(--md-theme-default-background, #424242);
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  background-color: #fff;
+  background-color: var(--md-theme-default-background, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-card.md-theme-default .md-card-expand .md-card-actions {
-  background-color: #424242;
-  background-color: var(--md-theme-default-background, #424242);
+  background-color: #fff;
+  background-color: var(--md-theme-default-background, #fff);
 }
 
 .md-card.md-theme-default .md-card-header .md-button:not(.md-primary):not(.md-accent),
 .md-card.md-theme-default .md-card-actions .md-button:not(.md-primary):not(.md-accent) {
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-card.md-theme-default .md-card-header .md-button:not(.md-primary):not(.md-accent).md-icon-button .md-icon,
 .md-card.md-theme-default .md-card-actions .md-button:not(.md-primary):not(.md-accent).md-icon-button .md-icon {
-  color: rgba(255, 255, 255, 0.54);
-  color: var(--md-theme-default-text-primary-on-background, rgba(255, 255, 255, 0.54));
-  fill: rgba(255, 255, 255, 0.54);
-  fill: var(--md-theme-default-text-primary-on-background, rgba(255, 255, 255, 0.54));
+  color: rgba(0, 0, 0, 0.54);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.54));
+  fill: rgba(0, 0, 0, 0.54);
+  fill: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.54));
 }
 
 .md-card.md-theme-default > .md-card-area:after {
-  background-color: rgba(255, 255, 255, 0.12);
-  background-color: var(--md-theme-default-divider-on-background, rgba(255, 255, 255, 0.12));
+  background-color: rgba(0, 0, 0, 0.12);
+  background-color: var(--md-theme-default-divider-on-background, rgba(0, 0, 0, 0.12));
 }
 
 .md-card.md-theme-default.md-primary {
@@ -12859,8 +12864,8 @@ html.md-theme-default {
 }
 
 .md-checkbox.md-theme-default.md-checked .md-checkbox-container:after {
-  border-color: #424242;
-  border-color: var(--md-theme-default-background, #424242);
+  border-color: #fff;
+  border-color: var(--md-theme-default-background, #fff);
 }
 
 .md-checkbox.md-theme-default.md-checked .md-ripple {
@@ -12894,69 +12899,69 @@ html.md-theme-default {
 }
 
 .md-checkbox.md-theme-default.md-indeterminate .md-checkbox-container {
-  border-color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.54);
   background-color: transparent;
 }
 
 .md-checkbox.md-theme-default.md-indeterminate .md-checkbox-container:after {
-  border-color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.54);
 }
 
 .md-checkbox.md-theme-default.md-indeterminate .md-ripple {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .md-checkbox.md-theme-default .md-checkbox-container {
-  border-color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.54);
 }
 
 .md-checkbox.md-theme-default.md-disabled .md-checkbox-container {
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(0, 0, 0, 0.26);
 }
 
 .md-checkbox.md-theme-default.md-disabled.md-checked .md-checkbox-container {
-  border-color: rgba(255, 255, 255, 0.3);
-  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(0, 0, 0, 0.26);
+  background-color: rgba(0, 0, 0, 0.26);
 }
 
 .md-chip.md-theme-default {
-  background-color: rgba(255, 255, 255, 0.12);
-  background-color: var(--md-theme-default-highlight, rgba(255, 255, 255, 0.12));
-  color: #fff;
-  color: var(--md-theme-default-text-primary, #fff);
+  background-color: rgba(0, 0, 0, 0.12);
+  background-color: var(--md-theme-default-highlight, rgba(0, 0, 0, 0.12));
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary, rgba(0, 0, 0, 0.87));
 }
 
 .md-chip.md-theme-default .md-icon.md-icon-image svg {
   color: #fff;
-  color: var(--md-theme-default-text-primary, #fff);
+  color: var(--md-theme-default-text-primary-on-text-primary, #fff);
   fill: #fff;
-  fill: var(--md-theme-default-text-primary, #fff);
+  fill: var(--md-theme-default-text-primary-on-text-primary, #fff);
 }
 
 .md-chip.md-theme-default.md-deletable:not(.md-disabled):hover, .md-chip.md-theme-default.md-clickable:not(.md-disabled):hover {
-  background-color: #fff;
-  background-color: var(--md-theme-default-icon, #fff);
-  color: rgba(0, 0, 0, 0.87);
-  color: var(--md-theme-default-text-primary-on-icon, rgba(0, 0, 0, 0.87));
+  background-color: rgba(0, 0, 0, 0.54);
+  background-color: var(--md-theme-default-icon, rgba(0, 0, 0, 0.54));
+  color: #fff;
+  color: var(--md-theme-default-text-primary-on-icon, #fff);
 }
 
 .md-chip.md-theme-default.md-deletable:not(.md-disabled):hover .md-icon, .md-chip.md-theme-default.md-clickable:not(.md-disabled):hover .md-icon {
-  fill: rgba(0, 0, 0, 0.87);
-  fill: var(--md-theme-default-text-primary-on-icon, rgba(0, 0, 0, 0.87));
+  fill: #fff;
+  fill: var(--md-theme-default-text-primary-on-icon, #fff);
 }
 
 .md-chip.md-theme-default.md-deletable:not(.md-disabled):hover .md-input-action, .md-chip.md-theme-default.md-clickable:not(.md-disabled):hover .md-input-action {
-  background-color: rgba(66, 66, 66, 0.87);
-  background-color: var(--md-theme-default-background, rgba(66, 66, 66, 0.87));
-  color: #fff;
-  color: var(--md-theme-default-icon-on-background, #fff);
+  background-color: rgba(255, 255, 255, 0.87);
+  background-color: var(--md-theme-default-background, rgba(255, 255, 255, 0.87));
+  color: rgba(0, 0, 0, 0.54);
+  color: var(--md-theme-default-icon-on-background, rgba(0, 0, 0, 0.54));
 }
 
 .md-chip.md-theme-default.md-deletable:not(.md-disabled):hover .md-input-action .md-icon svg, .md-chip.md-theme-default.md-clickable:not(.md-disabled):hover .md-input-action .md-icon svg {
-  fill: #fff;
-  fill: var(--md-theme-default-icon-on-background, #fff);
-  color: #fff;
-  color: var(--md-theme-default-icon-on-background, #fff);
+  fill: rgba(0, 0, 0, 0.54);
+  fill: var(--md-theme-default-icon-on-background, rgba(0, 0, 0, 0.54));
+  color: rgba(0, 0, 0, 0.54);
+  color: var(--md-theme-default-icon-on-background, rgba(0, 0, 0, 0.54));
 }
 
 .md-chip.md-theme-default.md-primary {
@@ -12967,22 +12972,22 @@ html.md-theme-default {
 }
 
 .md-chip.md-theme-default.md-primary .md-input-action {
-  color: rgba(0, 0, 0, 0.54);
-  color: var(--md-theme-default-icon-on-disabled, rgba(0, 0, 0, 0.54));
+  color: #fff;
+  color: var(--md-theme-default-icon-on-disabled, #fff);
   background-color: rgba(0, 0, 0, 0.26);
-  background-color: var(--md-theme-default-disabled-on-disabled, rgba(0, 0, 0, 0.26));
+  background-color: var(--md-theme-default-disabled, rgba(0, 0, 0, 0.26));
 }
 
 .md-chip.md-theme-default.md-primary.md-deletable:not(.md-disabled):hover, .md-chip.md-theme-default.md-primary.md-clickable:not(.md-disabled):hover {
-  color: rgba(0, 0, 0, 0.87);
-  color: var(--md-theme-default-text-primary-on-icon, rgba(0, 0, 0, 0.87));
-  background-color: #fff;
-  background-color: var(--md-theme-default-icon, #fff);
+  color: #fff;
+  color: var(--md-theme-default-text-primary-on-icon, #fff);
+  background-color: rgba(0, 0, 0, 0.54);
+  background-color: var(--md-theme-default-icon, rgba(0, 0, 0, 0.54));
 }
 
 .md-chip.md-theme-default.md-primary.md-deletable:not(.md-disabled):hover .md-input-action, .md-chip.md-theme-default.md-primary.md-clickable:not(.md-disabled):hover .md-input-action {
-  background-color: rgba(66, 66, 66, 0.87);
-  background-color: var(--md-theme-default-background, rgba(66, 66, 66, 0.87));
+  background-color: rgba(255, 255, 255, 0.87);
+  background-color: var(--md-theme-default-background, rgba(255, 255, 255, 0.87));
 }
 
 .md-chip.md-theme-default.md-accent, .md-chip.md-theme-default.md-duplicated {
@@ -12993,40 +12998,40 @@ html.md-theme-default {
 }
 
 .md-chip.md-theme-default.md-accent .md-input-action, .md-chip.md-theme-default.md-duplicated .md-input-action {
-  color: rgba(0, 0, 0, 0.54);
-  color: var(--md-theme-default-icon-on-disabled, rgba(0, 0, 0, 0.54));
+  color: #fff;
+  color: var(--md-theme-default-icon-on-disabled, #fff);
   background-color: rgba(0, 0, 0, 0.26);
-  background-color: var(--md-theme-default-disabled-on-disabled, rgba(0, 0, 0, 0.26));
+  background-color: var(--md-theme-default-disabled, rgba(0, 0, 0, 0.26));
 }
 
 .md-chip.md-theme-default.md-accent.md-deletable:not(.md-disabled):hover, .md-chip.md-theme-default.md-accent.md-clickable:not(.md-disabled):hover, .md-chip.md-theme-default.md-duplicated.md-deletable:not(.md-disabled):hover, .md-chip.md-theme-default.md-duplicated.md-clickable:not(.md-disabled):hover {
-  background-color: #fff;
-  background-color: var(--md-theme-default-icon, #fff);
-  color: rgba(0, 0, 0, 0.87);
-  color: var(--md-theme-default-text-primary-on-icon, rgba(0, 0, 0, 0.87));
+  background-color: rgba(0, 0, 0, 0.54);
+  background-color: var(--md-theme-default-icon, rgba(0, 0, 0, 0.54));
+  color: #fff;
+  color: var(--md-theme-default-text-primary-on-icon, #fff);
 }
 
 .md-chip.md-theme-default.md-accent.md-deletable:not(.md-disabled):hover .md-input-action, .md-chip.md-theme-default.md-accent.md-clickable:not(.md-disabled):hover .md-input-action, .md-chip.md-theme-default.md-duplicated.md-deletable:not(.md-disabled):hover .md-input-action, .md-chip.md-theme-default.md-duplicated.md-clickable:not(.md-disabled):hover .md-input-action {
-  background-color: rgba(66, 66, 66, 0.87);
-  background-color: var(--md-theme-default-background, rgba(66, 66, 66, 0.87));
+  background-color: rgba(255, 255, 255, 0.87);
+  background-color: var(--md-theme-default-background, rgba(255, 255, 255, 0.87));
 }
 
 .md-chip.md-theme-default.md-disabled {
-  background-color: rgba(255, 255, 255, 0.1);
-  background-color: var(--md-theme-default-highlight, rgba(255, 255, 255, 0.1));
-  color: rgba(255, 255, 255, 0.7);
-  color: var(--md-theme-default-text-accent, rgba(255, 255, 255, 0.7));
+  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--md-theme-default-highlight, rgba(0, 0, 0, 0.1));
+  color: rgba(0, 0, 0, 0.54);
+  color: var(--md-theme-default-text-accent, rgba(0, 0, 0, 0.54));
 }
 
 .md-chips.md-theme-default .md-clear {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .md-content.md-theme-default {
-  background-color: #424242;
-  background-color: var(--md-theme-default-background, #424242);
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  background-color: #fff;
+  background-color: var(--md-theme-default-background, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-content.md-theme-default.md-primary {
@@ -13044,46 +13049,46 @@ html.md-theme-default {
 }
 
 .md-app .md-content.md-theme-default {
-  border-left-color: rgba(255, 255, 255, 0.12);
-  border-left-color: var(--md-theme-default-divider-on-background, rgba(255, 255, 255, 0.12));
-  border-right-color: rgba(255, 255, 255, 0.12);
-  border-right-color: var(--md-theme-default-divider-on-background, rgba(255, 255, 255, 0.12));
+  border-left-color: rgba(0, 0, 0, 0.12);
+  border-left-color: var(--md-theme-default-divider-on-background, rgba(0, 0, 0, 0.12));
+  border-right-color: rgba(0, 0, 0, 0.12);
+  border-right-color: var(--md-theme-default-divider-on-background, rgba(0, 0, 0, 0.12));
 }
 
 .md-datepicker-dialog.md-theme-default {
-  background-color: #424242;
-  background-color: var(--md-theme-default-background, #424242);
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  background-color: #fff;
+  background-color: var(--md-theme-default-background, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-datepicker-dialog.md-theme-default .md-datepicker-header {
-  background-color: rgba(255, 255, 255, 0.06);
-  background-color: var(--md-theme-default-text-primary, rgba(255, 255, 255, 0.06));
+  background-color: #1c2f90;
+  background-color: var(--md-theme-default-primary, #1c2f90);
   color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  color: var(--md-theme-default-text-primary-on-primary, #fff);
 }
 
 .md-datepicker-dialog.md-theme-default .md-datepicker-body-header:after, .md-datepicker-dialog.md-theme-default .md-datepicker-body-header:before {
-  background-color: #424242;
-  background-color: var(--md-theme-default-background, #424242);
+  background-color: #fff;
+  background-color: var(--md-theme-default-background, #fff);
 }
 
 .md-datepicker-dialog.md-theme-default .md-datepicker-body-footer {
-  background-color: #424242;
-  background-color: var(--md-theme-default-background, #424242);
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  background-color: #fff;
+  background-color: var(--md-theme-default-background, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-datepicker-dialog.md-theme-default .md-datepicker-week {
-  color: rgba(255, 255, 255, 0.7);
-  color: var(--md-theme-default-text-accent-on-background, rgba(255, 255, 255, 0.7));
+  color: rgba(0, 0, 0, 0.54);
+  color: var(--md-theme-default-text-accent-on-background, rgba(0, 0, 0, 0.54));
 }
 
 .md-datepicker-dialog.md-theme-default .md-datepicker-disabled {
-  color: rgba(255, 255, 255, 0.3);
-  color: var(--md-theme-default-disabled-on-background, rgba(255, 255, 255, 0.3));
+  color: rgba(0, 0, 0, 0.26);
+  color: var(--md-theme-default-disabled-on-background, rgba(0, 0, 0, 0.26));
 }
 
 .md-datepicker-dialog.md-theme-default .md-datepicker-today {
@@ -13094,8 +13099,8 @@ html.md-theme-default {
 .md-datepicker-dialog.md-theme-default .md-datepicker-day-button:hover,
 .md-datepicker-dialog.md-theme-default .md-datepicker-month-button:hover,
 .md-datepicker-dialog.md-theme-default .md-datepicker-year-button:hover {
-  background-color: rgba(255, 255, 255, 0.12);
-  background-color: var(--md-theme-default-divider, rgba(255, 255, 255, 0.12));
+  background-color: rgba(0, 0, 0, 0.12);
+  background-color: var(--md-theme-default-divider, rgba(0, 0, 0, 0.12));
 }
 
 .md-datepicker-dialog.md-theme-default .md-datepicker-day-button.md-datepicker-selected {
@@ -13112,52 +13117,52 @@ html.md-theme-default {
 }
 
 .md-datepicker-dialog.md-theme-default .md-datepicker-year-selector {
-  border-bottom-color: rgba(255, 255, 255, 0.12);
-  border-bottom-color: var(--md-theme-default-divider-on-background, rgba(255, 255, 255, 0.12));
+  border-bottom-color: rgba(0, 0, 0, 0.12);
+  border-bottom-color: var(--md-theme-default-divider-on-background, rgba(0, 0, 0, 0.12));
 }
 
 .md-dialog.md-theme-default {
-  background-color: #424242;
-  background-color: var(--md-theme-default-background, #424242);
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  background-color: #fff;
+  background-color: var(--md-theme-default-background, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-divider.md-theme-default {
-  background-color: rgba(255, 255, 255, 0.12);
-  background-color: var(--md-theme-default-divider, rgba(255, 255, 255, 0.12));
+  background-color: rgba(0, 0, 0, 0.12);
+  background-color: var(--md-theme-default-divider, rgba(0, 0, 0, 0.12));
 }
 
 .md-drawer.md-theme-default {
-  background-color: #424242;
-  background-color: var(--md-theme-default-background, #424242);
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  background-color: #fff;
+  background-color: var(--md-theme-default-background, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-drawer.md-theme-default.md-persistent-mini.md-left {
-  border-right-color: rgba(255, 255, 255, 0.12);
-  border-right-color: var(--md-theme-default-divider-on-background, rgba(255, 255, 255, 0.12));
+  border-right-color: rgba(0, 0, 0, 0.12);
+  border-right-color: var(--md-theme-default-divider-on-background, rgba(0, 0, 0, 0.12));
 }
 
 .md-drawer.md-theme-default.md-persistent-mini.md-right {
-  border-left-color: rgba(255, 255, 255, 0.12);
-  border-left-color: var(--md-theme-default-divider-on-background, rgba(255, 255, 255, 0.12));
+  border-left-color: rgba(0, 0, 0, 0.12);
+  border-left-color: var(--md-theme-default-divider-on-background, rgba(0, 0, 0, 0.12));
 }
 
 .md-empty-state.md-theme-default .md-empty-state-icon.md-icon-image svg {
-  fill: rgba(255, 255, 255, 0.3);
-  fill: var(--md-theme-default-disabled-on-background, rgba(255, 255, 255, 0.3));
+  fill: rgba(0, 0, 0, 0.26);
+  fill: var(--md-theme-default-disabled-on-background, rgba(0, 0, 0, 0.26));
 }
 
 .md-empty-state.md-theme-default .md-empty-state-icon.md-icon-font {
-  color: rgba(255, 255, 255, 0.3);
-  color: var(--md-theme-default-disabled-on-background, rgba(255, 255, 255, 0.3));
+  color: rgba(0, 0, 0, 0.26);
+  color: var(--md-theme-default-disabled-on-background, rgba(0, 0, 0, 0.26));
 }
 
 .md-empty-state.md-theme-default.md-rounded {
-  background-color: rgba(255, 255, 255, 0.06);
-  background-color: var(--md-theme-default-disabled, rgba(255, 255, 255, 0.06));
+  background-color: rgba(0, 0, 0, 0.06);
+  background-color: var(--md-theme-default-disabled, rgba(0, 0, 0, 0.06));
 }
 
 .md-empty-state.md-theme-default.md-primary .md-empty-state-icon.md-icon-image svg {
@@ -13181,7 +13186,7 @@ html.md-theme-default {
 }
 
 .md-field.md-theme-default:after {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.42);
 }
 
 .md-field.md-theme-default:before {
@@ -13192,26 +13197,26 @@ html.md-theme-default {
 .md-field.md-theme-default .md-helper-text,
 .md-field.md-theme-default .md-count,
 .md-field.md-theme-default label {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .md-field.md-theme-default .md-suffix, .md-field.md-theme-default .md-prefix {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .md-field.md-theme-default .md-input::-webkit-input-placeholder,
 .md-field.md-theme-default .md-textarea::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .md-field.md-theme-default.md-focused .md-input,
 .md-field.md-theme-default.md-focused .md-textarea, .md-field.md-theme-default.md-has-value .md-input,
 .md-field.md-theme-default.md-has-value .md-textarea {
-  -webkit-text-fill-color: #fff;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0.87);
 }
 
 .md-field.md-theme-default.md-has-textarea:not(.md-autogrow):after {
-  border-color: #fff;
+  border-color: rgba(0, 0, 0, 0.42);
 }
 
 .md-field.md-theme-default.md-has-textarea:not(.md-autogrow):before {
@@ -13220,19 +13225,19 @@ html.md-theme-default {
 }
 
 .md-field.md-theme-default.md-disabled:after {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.7)), color-stop(33%, rgba(255, 255, 255, 0.7)), color-stop(0%, transparent));
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 33%, transparent 0%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.38)), color-stop(33%, rgba(0, 0, 0, 0.38)), color-stop(0%, transparent));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.38) 0%, rgba(0, 0, 0, 0.38) 33%, transparent 0%);
 }
 
 .md-field.md-theme-default.md-disabled label,
 .md-field.md-theme-default.md-disabled .md-input,
 .md-field.md-theme-default.md-disabled .md-textarea {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.42);
 }
 
 .md-field.md-theme-default > .md-icon:after {
-  background-color: #303030;
-  background-color: var(--md-theme-default-background-variant, #303030);
+  background-color: #fafafa;
+  background-color: var(--md-theme-default-background-variant, #fafafa);
 }
 
 .md-field.md-theme-default.md-invalid:after {
@@ -13283,13 +13288,13 @@ html.md-theme-default {
 }
 
 .md-field.md-theme-default.md-disabled .md-icon svg {
-  fill: rgba(255, 255, 255, 0.3);
-  fill: var(--md-theme-default-disabled-on-background, rgba(255, 255, 255, 0.3));
+  fill: rgba(0, 0, 0, 0.26);
+  fill: var(--md-theme-default-disabled-on-background, rgba(0, 0, 0, 0.26));
 }
 
 .md-icon.md-theme-default.md-icon-image svg {
-  fill: #fff;
-  fill: var(--md-theme-default-icon-on-background, #fff);
+  fill: rgba(0, 0, 0, 0.54);
+  fill: var(--md-theme-default-icon-on-background, rgba(0, 0, 0, 0.54));
 }
 
 .md-icon.md-theme-default.md-icon-image svg.md-primary {
@@ -13303,8 +13308,8 @@ html.md-theme-default {
 }
 
 .md-icon.md-theme-default.md-icon-font {
-  color: #fff;
-  color: var(--md-theme-default-icon-on-background, #fff);
+  color: rgba(0, 0, 0, 0.54);
+  color: var(--md-theme-default-icon-on-background, rgba(0, 0, 0, 0.54));
 }
 
 .md-icon.md-theme-default.md-icon-font.md-primary {
@@ -13318,42 +13323,42 @@ html.md-theme-default {
 }
 
 .md-list.md-theme-default {
-  background-color: #424242;
-  background-color: var(--md-theme-default-background, #424242);
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  background-color: #fff;
+  background-color: var(--md-theme-default-background, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-list.md-theme-default.md-double-line .md-list-item-text :nth-child(2) {
-  color: rgba(255, 255, 255, 0.7);
-  color: var(--md-theme-default-text-accent-on-background, rgba(255, 255, 255, 0.7));
+  color: rgba(0, 0, 0, 0.54);
+  color: var(--md-theme-default-text-accent-on-background, rgba(0, 0, 0, 0.54));
 }
 
 .md-list.md-theme-default.md-triple-line .md-list-item-text :nth-child(3) {
-  color: rgba(255, 255, 255, 0.7);
-  color: var(--md-theme-default-text-accent-on-background, rgba(255, 255, 255, 0.7));
+  color: rgba(0, 0, 0, 0.54);
+  color: var(--md-theme-default-text-accent-on-background, rgba(0, 0, 0, 0.54));
 }
 
 .md-list.md-theme-default .md-highlight .md-list-item-container {
-  background-color: rgba(255, 255, 255, 0.12);
-  background-color: var(--md-theme-default-divider-on-background, rgba(255, 255, 255, 0.12));
+  background-color: rgba(0, 0, 0, 0.12);
+  background-color: var(--md-theme-default-divider-on-background, rgba(0, 0, 0, 0.12));
 }
 
 .md-list.md-theme-default .md-list-item-container {
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-list.md-theme-default .md-list-item-container:not(.md-list-item-default):not(.md-list-item-expand):not([disabled]):hover {
-  background-color: rgba(255, 255, 255, 0.12);
-  background-color: var(--md-theme-default-divider-on-background, rgba(255, 255, 255, 0.12));
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  background-color: rgba(0, 0, 0, 0.12);
+  background-color: var(--md-theme-default-divider-on-background, rgba(0, 0, 0, 0.12));
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-list.md-theme-default [disabled] {
-  color: rgba(255, 255, 255, 0.3);
-  color: var(--md-theme-default-disabled-on-background, rgba(255, 255, 255, 0.3));
+  color: rgba(0, 0, 0, 0.26);
+  color: var(--md-theme-default-disabled-on-background, rgba(0, 0, 0, 0.26));
 }
 
 .md-list.md-theme-default .md-selected .md-list-item-content,
@@ -13363,15 +13368,15 @@ html.md-theme-default {
 }
 
 .md-list.md-theme-default .md-list-item-expand.md-active {
-  border-color: rgba(255, 255, 255, 0.12);
-  border-color: var(--md-theme-default-divider-on-background, rgba(255, 255, 255, 0.12));
+  border-color: rgba(0, 0, 0, 0.12);
+  border-color: var(--md-theme-default-divider-on-background, rgba(0, 0, 0, 0.12));
 }
 
 .md-list.md-theme-default .md-list-item-expand:not(.md-list-item-default):not([disabled]) > .md-list-item-content:hover {
-  background-color: rgba(255, 255, 255, 0.12);
-  background-color: var(--md-theme-default-divider-on-background, rgba(255, 255, 255, 0.12));
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  background-color: rgba(0, 0, 0, 0.12);
+  background-color: var(--md-theme-default-divider-on-background, rgba(0, 0, 0, 0.12));
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-menu-item.md-theme-default.md-primary .md-list-item-link,
@@ -13503,32 +13508,32 @@ html.md-theme-default {
 }
 
 .md-radio.md-theme-default .md-radio-container {
-  border-color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.54);
 }
 
 .md-radio.md-theme-default.md-disabled .md-radio-container {
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(0, 0, 0, 0.26);
 }
 
 .md-radio.md-theme-default.md-disabled.md-checked .md-radio-container {
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(0, 0, 0, 0.26);
 }
 
 .md-radio.md-theme-default.md-disabled.md-checked .md-radio-container:after {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.26);
 }
 
 .md-snackbar.md-theme-default {
-  color: rgba(0, 0, 0, 0.87);
-  color: var(--md-theme-default-text-primary-on-text-primary, rgba(0, 0, 0, 0.87));
-  background-color: #fff;
+  color: #fff;
+  color: var(--md-theme-default-text-primary-on-text-primary, #fff);
+  background-color: #323232;
 }
 
 .md-steppers.md-theme-default {
-  background-color: #424242;
-  background-color: var(--md-theme-default-background, #424242);
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  background-color: #fff;
+  background-color: var(--md-theme-default-background, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-steppers.md-theme-default .md-stepper-icon:after, .md-steppers.md-theme-default .md-stepper-icon:before,
@@ -13536,37 +13541,37 @@ html.md-theme-default {
 .md-steppers.md-theme-default .md-stepper-number:before,
 .md-steppers.md-theme-default .md-stepper:after,
 .md-steppers.md-theme-default .md-stepper:before {
-  background-color: rgba(255, 255, 255, 0.12);
-  background-color: var(--md-theme-default-divider-on-background, rgba(255, 255, 255, 0.12));
+  background-color: rgba(0, 0, 0, 0.12);
+  background-color: var(--md-theme-default-divider-on-background, rgba(0, 0, 0, 0.12));
 }
 
 .md-steppers.md-theme-default .md-stepper-number {
-  background-color: rgba(255, 255, 255, 0.5);
-  background-color: var(--md-theme-default-text-hint-on-background, rgba(255, 255, 255, 0.5));
-  color: rgba(0, 0, 0, 0.87);
-  color: var(--md-theme-default-text-primary-on-text-hint, rgba(0, 0, 0, 0.87));
+  background-color: rgba(0, 0, 0, 0.38);
+  background-color: var(--md-theme-default-text-hint-on-background, rgba(0, 0, 0, 0.38));
+  color: #fff;
+  color: var(--md-theme-default-text-primary-on-text-hint, #fff);
 }
 
 .md-steppers.md-theme-default .md-stepper-number svg {
-  color: rgba(0, 0, 0, 0.87);
-  color: var(--md-theme-default-text-primary-on-text-hint, rgba(0, 0, 0, 0.87));
-  fill: rgba(0, 0, 0, 0.87);
-  fill: var(--md-theme-default-text-primary-on-text-hint, rgba(0, 0, 0, 0.87));
+  color: #fff;
+  color: var(--md-theme-default-text-primary-on-text-hint, #fff);
+  fill: #fff;
+  fill: var(--md-theme-default-text-primary-on-text-hint, #fff);
 }
 
 .md-steppers.md-theme-default .md-stepper-header .md-button-content {
-  color: rgba(255, 255, 255, 0.5);
-  color: var(--md-theme-default-text-hint-on-background, rgba(255, 255, 255, 0.5));
+  color: rgba(0, 0, 0, 0.38);
+  color: var(--md-theme-default-text-hint-on-background, rgba(0, 0, 0, 0.38));
 }
 
 .md-steppers.md-theme-default .md-stepper-header .md-button-content:after, .md-steppers.md-theme-default .md-stepper-header .md-button-content:before {
-  background-color: rgba(255, 255, 255, 0.12);
-  background-color: var(--md-theme-default-divider-on-background, rgba(255, 255, 255, 0.12));
+  background-color: rgba(0, 0, 0, 0.12);
+  background-color: var(--md-theme-default-divider-on-background, rgba(0, 0, 0, 0.12));
 }
 
 .md-steppers.md-theme-default .md-stepper-header.md-active .md-button-content, .md-steppers.md-theme-default .md-stepper-header.md-done .md-button-content {
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-steppers.md-theme-default .md-stepper-header.md-active .md-stepper-number, .md-steppers.md-theme-default .md-stepper-header.md-done .md-stepper-number {
@@ -13596,8 +13601,8 @@ html.md-theme-default {
 }
 
 .md-subheader.md-theme-default {
-  color: rgba(255, 255, 255, 0.7);
-  color: var(--md-theme-default-text-accent-on-background, rgba(255, 255, 255, 0.7));
+  color: rgba(0, 0, 0, 0.54);
+  color: var(--md-theme-default-text-accent-on-background, rgba(0, 0, 0, 0.54));
 }
 
 .md-subheader.md-theme-default.md-primary {
@@ -13636,44 +13641,44 @@ html.md-theme-default {
 }
 
 .md-switch.md-theme-default .md-switch-container {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.38);
 }
 
 .md-switch.md-theme-default .md-switch-thumb {
+  background-color: #f5f5f5;
+  background-color: var(--md-theme-default-switchvariant, #f5f5f5);
+}
+
+.md-switch.md-theme-default.md-disabled .md-switch-container {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.md-switch.md-theme-default.md-disabled .md-switch-thumb {
   background-color: #bdbdbd;
   background-color: var(--md-theme-default-switchvariant, #bdbdbd);
 }
 
-.md-switch.md-theme-default.md-disabled .md-switch-container {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.md-switch.md-theme-default.md-disabled .md-switch-thumb {
-  background-color: #424242;
-  background-color: var(--md-theme-default-switchvariant, #424242);
-}
-
 .md-table.md-theme-default .md-table-content,
 .md-table.md-theme-default .md-table-alternate-header {
-  background-color: #424242;
-  background-color: var(--md-theme-default-background, #424242);
+  background-color: #fff;
+  background-color: var(--md-theme-default-background, #fff);
 }
 
 .md-table.md-theme-default .md-table-alternate-header .md-table-toolbar {
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
   background-color: rgba(255, 82, 82, 0.2);
   background-color: var(--md-theme-default-accent-on-, rgba(255, 82, 82, 0.2));
 }
 
 .md-table.md-theme-default .md-table-row:hover:not(.md-header-row) .md-table-cell {
-  background-color: rgba(255, 255, 255, 0.08);
-  background-color: var(--md-theme-default-highlight-on-background, rgba(255, 255, 255, 0.08));
+  background-color: rgba(0, 0, 0, 0.08);
+  background-color: var(--md-theme-default-highlight-on-background, rgba(0, 0, 0, 0.08));
 }
 
 .md-table.md-theme-default .md-table-row.md-selected, .md-table.md-theme-default .md-table-row.md-selected-single {
-  background-color: #616161;
-  background-color: var(--md-theme-default-rowvariant, #616161);
+  background-color: #f5f5f5;
+  background-color: var(--md-theme-default-rowvariant, #f5f5f5);
 }
 
 .md-table.md-theme-default .md-table-row.md-selected.md-primary, .md-table.md-theme-default .md-table-row.md-selected-single.md-primary {
@@ -13719,60 +13724,60 @@ html.md-theme-default {
 }
 
 .md-table.md-theme-default .md-table-row td {
-  border-top-color: rgba(255, 255, 255, 0.12);
-  border-top-color: var(--md-theme-default-divider-on-background, rgba(255, 255, 255, 0.12));
+  border-top-color: rgba(0, 0, 0, 0.12);
+  border-top-color: var(--md-theme-default-divider-on-background, rgba(0, 0, 0, 0.12));
 }
 
 .md-table.md-theme-default .md-table-head {
-  color: rgba(255, 255, 255, 0.7);
-  color: var(--md-theme-default-text-accent-on-background, rgba(255, 255, 255, 0.7));
+  color: rgba(0, 0, 0, 0.54);
+  color: var(--md-theme-default-text-accent-on-background, rgba(0, 0, 0, 0.54));
 }
 
 .md-table.md-theme-default .md-table-fixed-header-active {
-  border-bottom-color: rgba(255, 255, 255, 0.12);
-  border-bottom-color: var(--md-theme-default-divider-on-background, rgba(255, 255, 255, 0.12));
+  border-bottom-color: rgba(0, 0, 0, 0.12);
+  border-bottom-color: var(--md-theme-default-divider-on-background, rgba(0, 0, 0, 0.12));
 }
 
 .md-table.md-theme-default .md-sortable:hover, .md-table.md-theme-default .md-sortable.md-sorted {
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-table.md-theme-default .md-sortable:hover svg, .md-table.md-theme-default .md-sortable.md-sorted svg {
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
-  fill: #fff;
-  fill: var(--md-theme-default-text-primary-on-background, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
+  fill: rgba(0, 0, 0, 0.87);
+  fill: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-table.md-theme-default .md-table-pagination {
-  border-top-color: rgba(255, 255, 255, 0.12);
-  border-top-color: var(--md-theme-default-divider-on-background, rgba(255, 255, 255, 0.12));
+  border-top-color: rgba(0, 0, 0, 0.12);
+  border-top-color: var(--md-theme-default-divider-on-background, rgba(0, 0, 0, 0.12));
 }
 
 .md-tabs.md-theme-default .md-tabs-navigation {
-  background-color: #424242;
-  background-color: var(--md-theme-default-background-on-background, #424242);
+  background-color: #fff;
+  background-color: var(--md-theme-default-background-on-background, #fff);
 }
 
 .md-tabs.md-theme-default .md-tabs-navigation .md-button {
-  color: rgba(255, 255, 255, 0.7);
-  color: var(--md-theme-default-text-primary-on-background, rgba(255, 255, 255, 0.7));
+  color: rgba(0, 0, 0, 0.7);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.7));
 }
 
 .md-tabs.md-theme-default .md-tabs-navigation .md-button[disabled] {
-  color: rgba(255, 255, 255, 0.38);
-  color: var(--md-theme-default-text-primary-on-background, rgba(255, 255, 255, 0.38));
+  color: rgba(0, 0, 0, 0.38);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.38));
 }
 
 .md-tabs.md-theme-default .md-tabs-navigation .md-button .md-icon {
-  color: rgba(255, 255, 255, 0.7);
-  color: var(--md-theme-default-text-primary-on-background, rgba(255, 255, 255, 0.7));
+  color: rgba(0, 0, 0, 0.7);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.7));
 }
 
 .md-tabs.md-theme-default .md-tabs-navigation .md-button .md-icon svg {
-  fill: rgba(255, 255, 255, 0.7);
-  fill: var(--md-theme-default-text-primary-on-background, rgba(255, 255, 255, 0.7));
+  fill: rgba(0, 0, 0, 0.7);
+  fill: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.7));
 }
 
 .md-tabs.md-theme-default .md-tabs-navigation .md-button.md-active {
@@ -13886,27 +13891,27 @@ html.md-theme-default {
 }
 
 .md-toolbar.md-theme-default {
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background-variant, #fff);
-  background-color: #212121;
-  background-color: var(--md-theme-default-toolbarvariant, #212121);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background-variant, rgba(0, 0, 0, 0.87));
+  background-color: #f5f5f5;
+  background-color: var(--md-theme-default-toolbarvariant, #f5f5f5);
 }
 
 .md-toolbar.md-theme-default .md-icon {
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background-variant, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background-variant, rgba(0, 0, 0, 0.87));
 }
 
 .md-toolbar.md-theme-default .md-icon svg {
-  fill: #fff;
-  fill: var(--md-theme-default-text-primary-on-background-variant, #fff);
+  fill: rgba(0, 0, 0, 0.87);
+  fill: var(--md-theme-default-text-primary-on-background-variant, rgba(0, 0, 0, 0.87));
 }
 
 .md-toolbar.md-theme-default .md-title,
 .md-toolbar.md-theme-default .md-display-1,
 .md-toolbar.md-theme-default .md-display-2 {
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background-variant, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background-variant, rgba(0, 0, 0, 0.87));
 }
 
 .md-toolbar.md-theme-default.md-primary {
@@ -13969,32 +13974,32 @@ html.md-theme-default {
 
 .md-toolbar.md-theme-default.md-transparent {
   background-color: transparent;
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-toolbar.md-theme-default.md-transparent .md-icon {
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-toolbar.md-theme-default.md-transparent .md-icon svg {
-  fill: #fff;
-  fill: var(--md-theme-default-text-primary-on-background, #fff);
+  fill: rgba(0, 0, 0, 0.87);
+  fill: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-toolbar.md-theme-default.md-transparent .md-title,
 .md-toolbar.md-theme-default.md-transparent .md-display-1,
 .md-toolbar.md-theme-default.md-transparent .md-display-2 {
-  color: #fff;
-  color: var(--md-theme-default-text-primary-on-background, #fff);
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--md-theme-default-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 .md-tooltip.md-theme-default {
-  color: rgba(0, 0, 0, 0.87);
-  color: var(--md-theme-default-text-primary-on-tooltip, rgba(0, 0, 0, 0.87));
-  background-color: rgba(255, 255, 255, 0.9);
-  background-color: var(--md-theme-default-tooltip-on-background, rgba(255, 255, 255, 0.9));
+  color: #fff;
+  color: var(--md-theme-default-text-primary-on-tooltip, #fff);
+  background-color: rgba(97, 97, 97, 0.9);
+  background-color: var(--md-theme-default-tooltip-on-background, rgba(97, 97, 97, 0.9));
 }
 
 .md-badge.md-theme-default {
@@ -14012,9 +14017,36 @@ html.md-theme-default {
 }
 
 .home .home-card {
+  display: inline-table;
   position: fixed;
   bottom: 20%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.home .gif {
+  position: fixed;
+  bottom: -20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 1000px) {
+  .home .gif {
+    bottom: 0%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .home .gif {
+    bottom: 30%;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .home .gif {
+    bottom: 50%;
+  }
 }

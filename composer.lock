@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd223836f545209f7e18770bb527d350",
+    "content-hash": "77256ad07eed261547eaf3981d71b824",
     "packages": [
         {
             "name": "clean-code-studio/laravel-addresses",

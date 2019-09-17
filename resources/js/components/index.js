@@ -6,6 +6,7 @@ import FoodMixin from '../mixins/Food.js'
  * Components
  */
 Vue.component('speed-dial', require('./SpeedDial'))
+Vue.component('page-title', require('./PageTitle'))
 Vue.component('food-card', require('./FoodCard'))
 Vue.component('foods', require('./Foods'))
 

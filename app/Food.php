@@ -15,6 +15,8 @@ class Food extends Model
         'category',
         'quantity_unit',
         'quantity_amount',
+        'requester_id',
+        'donor_id'
     ];
 
     protected $dates = [
@@ -29,6 +31,11 @@ class Food extends Model
     public function donor()
     {
         return $this->belongsTo(User::class, 'donor_id');
+    }
+
+    public function requester()
+    {
+        return $this->belongsTo(User::class, 'requester_id');
     }
 
 }

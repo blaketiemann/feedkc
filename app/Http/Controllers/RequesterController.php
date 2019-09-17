@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\Statuses;
 use App\Http\Requests\RequesterFormRequest as Request;
+use App\Food;
 
 class RequesterController extends Controller
 {
@@ -34,7 +36,18 @@ class RequesterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $userID = auth()->user()->id;
+
+        foreach($request->all() as $foods)
+        {
+            foreach($foods as $food)
+            {
+                $food = Food::findOrFail($food['id']);
+                $food->requester_id = $userID;
+                $food->status = Statuses::DONATED;
+                $food->save();
+            }
+        }
     }
 
     /**

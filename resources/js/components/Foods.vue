@@ -1,5 +1,5 @@
 <template>
-    <div class="md-layout md-gutter">
+    <div class="md-layout md-gutter" style="justify-content: space-evenly">
         <food-card
             v-for="food in foods"
             :food="food"

@@ -30,7 +30,7 @@
                 @include('sections.nav-right')
             </md-app-toolbar>
 
-            <md-app-drawer :md-active.sync="$data.showDrawer" md-persistent="mini">
+            <md-app-drawer :md-active.sync="$data.showDrawer">
                 @include('sections.drawer')
             </md-app-drawer>
 

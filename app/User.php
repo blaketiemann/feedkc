@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Enums\Accounts;
+use App\Enums\Statuses;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use CleanCodeStudio\LaravelTextMessages\Textable;

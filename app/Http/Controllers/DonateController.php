@@ -28,7 +28,8 @@ class DonateController extends Controller
      */
     public function create()
     {
-        return view('donate.create');
+        $foods =  Food::where('donor_id', auth()->user()->id)->where('status', 'listed')->get();
+        return view('donate.create', compact('foods'));
     }
 
     /**

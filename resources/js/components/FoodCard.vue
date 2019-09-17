@@ -16,7 +16,7 @@
         <md-card-expand>
             <md-card-actions md-alignment="space-between">
                 <div>
-                    <md-button v-if="requestable" @click="requestFood(quantity_requested)">
+                    <md-button v-if="requestable" @click="requestFood">
                         To Cart
                     </md-button>
                     <md-button v-if="deleteable" @click="deleteFood">

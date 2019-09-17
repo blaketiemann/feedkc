@@ -30,7 +30,7 @@
         @endaccount
 
         <md-list-item
-            onclick="alert('Need to Implement')"
+            href="{{ route('profile') }}"
         >
             <md-icon>person</md-icon>
             <span class="md-list-item-text">

@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'from' => 'join.our.mission@feedkc.com',
+    'from' => '3027528082@messaging.sprintpcs.com',
 ];

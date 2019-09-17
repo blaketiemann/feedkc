@@ -9,8 +9,7 @@ export default {
 
     methods:
     {
-        requestFood(amount) {
-            this.food.quantity_requested = amount
+        requestFood() {
             $store.commit('addToCart', this.food)
         },
         deleteFood() {

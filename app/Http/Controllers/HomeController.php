@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\Accounts;
+use App\Enums\Statuses;
+use App\Food;
 use App\Http\Requests\DonateFormRequest as Request;
 
 class HomeController extends Controller
@@ -31,13 +34,17 @@ class HomeController extends Controller
         return view('about');
     }
 
-    public function mission()
+    public function profile()
     {
-        return view('mission');
-    }
+        if(!auth())
+            return view('home');
 
-    public function request()
-    {
-        return view('request');
+        $user = auth()->user();
+        if($user->account === Accounts::DONOR)
+            $foods = $user->foods()->where('status', Statuses::DONATED)->orderBy('updated_at', 'desc')->get();
+        if($user->account === Accounts::REQUESTER)
+            $foods = Food::where('requester_id', $user->id)->where('status', Statuses::DONATED)->orderBy('updated_at', 'desc')->get();
+
+        return view('profile', compact('foods'));
     }
 }
