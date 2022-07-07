@@ -24,7 +24,7 @@
         "vue": "^2.5.17"
     },
     "dependencies": {
-        "moment": "^2.24.0",
+        "moment": "^2.29.4",
         "vue-material": "^1.0.0-beta-11",
         "vue-material-slider": "^1.0.1",
         "vue-range-component": "^1.0.3",
